@@ -1,0 +1,5 @@
+Types: deb
+Suites: RELEASE 
+URIs: https://brave-browser-apt-release.s3.brave.com/
+Components: main
+Enabled: false

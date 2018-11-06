@@ -3,4 +3,4 @@ all:
 	sh make-dists.sh
 
 clean:
-	rm -f output brave-release/etc/apt/trusted.gpg.d/* *.asc
+	rm -rf output brave-release-base/etc/apt/trusted.gpg.d/* *.asc
