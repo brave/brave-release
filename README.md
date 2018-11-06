@@ -5,9 +5,9 @@ enable our distribution on Linux platforms.
 
 ### Dependencies
 
-1. To build RPMs you'll need the 'mock' package installed, as well as 'rpm-sign' if you plan on signing packages: `dnf install mock rpm-sign`
+1. To build RPMs you'll need the 'mock' package installed, as well as 'rpm-sign' if you plan on signing packages: `dnf install mock rpm-sign` on fedora, `mock rpmsign` on debian/ubuntu
 
-2. To build debs you'll need the 'debhelper' and 'build-essential' packages installed: `apt install debhelper build-essential`
+2. To build debs you'll need the 'debhelper' and 'build-essential' packages installed: `apt install debhelper build-essential` on ubuntu/debian, `dpkg` on fedora.
 
 ### Instructions
 
