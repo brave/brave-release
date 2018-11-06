@@ -1,3 +1,2 @@
 deb/*.deb
-deb/brave-release-base/etc/apt/trusted.gpg.d/*
 rpm/rpmbuild/*
