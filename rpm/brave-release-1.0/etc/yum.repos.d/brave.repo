@@ -1,0 +1,7 @@
+[brave]
+name=Brave Browser repo
+baseurl=https://brave-browser-rpm-release.s3.brave.com/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave
+       file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave-old
+enabled=1
+gpgcheck=1
