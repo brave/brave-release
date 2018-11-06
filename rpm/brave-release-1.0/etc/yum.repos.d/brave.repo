@@ -1,7 +1,23 @@
-[brave]
-name=Brave Browser repo
+[brave-release]
+name=Brave Browser repo release channel
 baseurl=https://brave-browser-rpm-release.s3.brave.com/$basearch/
 gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave
        file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave-old
-enabled=1
+enabled=0
+gpgcheck=1
+
+[brave-beta]
+name=Brave Browser repo beta channel
+baseurl=https://brave-browser-rpm-beta.s3.brave.com/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave
+       file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave-old
+enabled=0
+gpgcheck=1
+
+[brave-nightly]
+name=Brave Browser repo nightly channel
+baseurl=https://brave-browser-rpm-nightly.s3.brave.com/$basearch/
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave
+       file:///etc/pki/rpm-gpg/RPM-GPG-KEY-brave-old
+enabled=0
 gpgcheck=1

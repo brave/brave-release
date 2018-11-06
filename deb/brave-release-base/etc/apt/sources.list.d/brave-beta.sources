@@ -2,4 +2,5 @@ Types: deb
 Suites: RELEASE
 URIs: https://brave-browser-apt-beta.s3.brave.com/
 Components: main
+Signed-by: /etc/apt/trusted.gpg.d/brave.gpg
 Enabled: false
