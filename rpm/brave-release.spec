@@ -9,7 +9,7 @@ Source0:	http://i.bke.ro/brave-release-source.tar.gz
 BuildArch:  noarch
 
 %description
-The Brave release setup installs the keyring files necessay for validating
+The Brave release setup installs the keyring files necessary for validating
 packages. It also installs the yum.repos.d repository for for fetching
 the packages.
 
