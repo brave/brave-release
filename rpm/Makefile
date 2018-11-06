@@ -1,15 +1,19 @@
 all: source
-		mkdir -p rpmbuild/SOURCES \
-				 rpmbuild/SPECS \
-				 rpmbuild/BUILD \
-				 rpmbuild/BUILDROOT \
-				 rpmbuild/SRPMS \
-				 rpmbuild/RPMS
-		rpmbuild --define '_topdir $(shell pwd)/rpmbuild' -bb brave-release.spec
+		for dist in epel-7-x86_64 \
+				    fedora-27-x86_64 \
+				    fedora-28-x86_64 \
+				    fedora-29-x86_64 \
+					fedora-30-x86_64 ; do \
+				mock -r $$dist \
+				     --buildsrpm \
+					 --source=brave-release-source.tar.gz \
+					 --spec=brave-release.spec \
+					 --rebuild \
+					 --resultdir=output ; \
+		done
 
 source:
-		tar cvzf rpmbuild/SOURCES/brave-release-source.tar.gz brave-release-1.0/*
+		tar cvzf brave-release-source.tar.gz brave-release-1.0/*
 
 clean:
-		rm -f rpmbuild/RPMS/*.rpm \
-		      rpmbuild/SOURCES/*
+		rm -rf output brave-release-source.tar.gz

@@ -1,2 +1,3 @@
 deb/*.deb
-rpm/rpmbuild/*
+rpm/output
+rpm/brave-release-source*.tar.gz
