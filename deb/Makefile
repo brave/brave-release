@@ -1,6 +1,6 @@
 all:
 	sh make-keyring.sh
-	dpkg-deb --build brave-release/
+	sh make-dists.sh
 
 clean:
-	rm -f brave-release.deb brave-release/etc/apt/trusted.gpg.d/*
+	rm -f *.deb brave-release/etc/apt/trusted.gpg.d/*

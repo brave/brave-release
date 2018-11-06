@@ -2,7 +2,7 @@
 
 set -eux
 
-export BASE=$(pwd)/brave-release
+export BASE=$(pwd)/brave-release-base
 
 export GNUPGHOME=${BASE}/etc/apt/trusted.gpg.d
 
