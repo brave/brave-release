@@ -1,6 +1,6 @@
-Package: brave-release
+Package: brave-keyring
 Architecture: all
 Maintainer: Ben Kero <bkero@brave.com>
 Priority: optional
-Version: 1.0
+Version: 1.1
 Description: Brave Browser keyring and repository files

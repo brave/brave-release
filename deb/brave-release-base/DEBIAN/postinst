@@ -1,4 +1,0 @@
-#!/bin/sh
-
-chown root:root /etc/apt/trusted.gpg.d/brave.gpg
-chmod 0644 /etc/apt/trusted.gpg.d/brave.gpg

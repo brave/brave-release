@@ -1,0 +1,4 @@
+#!/bin/sh
+
+chown root:root /usr/share/keyrings/brave-keyring.gpg
+chmod 0644 /usr/share/keyrings/brave-keyring.gpg
