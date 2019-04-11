@@ -1,4 +1,0 @@
-#!/bin/sh
-
-rm -f /etc/apt/sources.list.d/brave-browser-release-*.list
-apt-key del 4FE13824E3FFC656 # FIXME replace with old key fingerprint

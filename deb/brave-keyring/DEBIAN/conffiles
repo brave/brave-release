@@ -1,4 +1,0 @@
-etc/apt/sources.list.d/brave-release.sources
-etc/apt/sources.list.d/brave-beta.sources
-etc/apt/sources.list.d/brave-nightly.sources
-usr/share/keyrings/brave-keyring.gpg
