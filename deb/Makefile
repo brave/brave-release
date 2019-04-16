@@ -3,4 +3,4 @@ all:
 	sh make-dists.sh
 
 clean:
-	rm -rf output brave-keyring/usr/share/keyrings/* *.asc
+	rm -rf output brave-keyring/etc/apt/trusted.gpg.d/* *.asc

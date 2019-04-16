@@ -1,4 +1,4 @@
 #!/bin/sh
 
-chown root:root /usr/share/keyrings/brave-keyring.gpg
-chmod 0644 /usr/share/keyrings/brave-keyring.gpg
+chown root:root /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+chmod 0644 /etc/apt/trusted.gpg.d/brave-browser-release.gpg

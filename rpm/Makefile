@@ -6,14 +6,17 @@ all: source
 					fedora-30-x86_64 ; do \
 				mock -r $$dist \
 				     --buildsrpm \
-					 --source=brave-release-source.tar.gz \
-					 --spec=brave-release.spec \
+					 --source=brave-keyring-source.tar.gz \
+					 --spec=brave-keyring.spec \
 					 --rebuild \
 					 --resultdir=output ; \
 		done
 
-source:
-		tar cvzf brave-release-source.tar.gz brave-release-1.0/*
+keys:
+		wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc -O brave-keyring-1.1/etc/pki/rpm-gpg/RPM-GPG-KEY-brave
+		#wget https://brave-browser-apt-nightly.s3.brave.com/brave-core-nightly.asc -O brave-keyring-1.1/etc/pki/rpm-gpg/RPM-GPG-KEY-brave-nightly
+source: keys
+		tar cvzf brave-keyring-source.tar.gz brave-keyring-1.1/*
 
 clean:
-		rm -rf output brave-release-source.tar.gz
+		rm -rf output brave-keyring-source.tar.gz brave-keyring-1.1/etc/pki/rpm-gpg/*
