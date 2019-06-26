@@ -4,3 +4,4 @@ Maintainer: Ben Kero <bkero@brave.com>
 Priority: optional
 Version: 1.2
 Description: Brave Browser keyring and repository files
+Depends: gnupg
