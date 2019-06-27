@@ -1,5 +1,5 @@
 Name:       brave-keyring
-Version:    1.1
+Version:    1.3
 Release:    1%{?dist}
 Summary:    Brave Browser keyring and repository files
 
@@ -24,7 +24,7 @@ fetching the packages.
 mkdir -p %{buildroot}/etc/pki/rpm-gpg
 mkdir -p %{buildroot}/etc/cron.daily
 install -m 644 etc/pki/rpm-gpg/RPM-GPG-KEY-brave -t %{buildroot}/etc/pki/rpm-gpg/
-install -m 644 etc/cron.daily/brave-key-updater -t %{buildroot}/etc/cron.daily/
+install -m 755 etc/cron.daily/brave-key-updater -t %{buildroot}/etc/cron.daily/
 #install -m 644 etc/pki/rpm-gpg/RPM-GPG-KEY-brave-nightly -t %{buildroot}/etc/pki/rpm-gpg/
 
 mkdir -p %{buildroot}/etc/yum.repos.d
