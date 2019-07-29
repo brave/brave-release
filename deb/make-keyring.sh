@@ -5,7 +5,6 @@ set -eux
 export BASE=$(pwd)/brave-keyring
 
 wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc
-#wget https://brave-browser-apt-beta.s3.brave.com/brave-core-nightly.asc
 
 # Uncomment when/if we decide to move the keyring file to /usr/share/keyrings/ as recommended in:
 # https://wiki.debian.org/DebianRepository/UseThirdParty
