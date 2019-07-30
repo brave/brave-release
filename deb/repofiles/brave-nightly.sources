@@ -1,6 +1,0 @@
-Types: deb
-Suites: RELEASE
-URIs: https://brave-browser-apt-nightly.s3.brave.com/
-Components: main
-Signed-by: /usr/share/keyrings/brave-browser-release.gpg
-Enabled: false

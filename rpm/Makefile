@@ -14,7 +14,7 @@ all: source
 
 keys:
 		wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc -O brave-keyring-1.3/etc/pki/rpm-gpg/RPM-GPG-KEY-brave
-		#wget https://brave-browser-apt-nightly.s3.brave.com/brave-core-nightly.asc -O brave-keyring-1.1/etc/pki/rpm-gpg/RPM-GPG-KEY-brave-nightly
+
 source: keys
 		tar cvzf brave-keyring-source.tar.gz brave-keyring-1.3/*
 

@@ -1,1 +1,0 @@
-deb [signed-by=/etc/apt/trusted.gpg.d/brave-browser-release.gpg enabled=false arch=amd64] https://brave-browser-apt-release.s3.brave.com/ RELEASE main
