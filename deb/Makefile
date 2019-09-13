@@ -1,4 +1,5 @@
 all:
+	mkdir -p output
 	sh make-keyring.sh
 	sh make-dists.sh
 
