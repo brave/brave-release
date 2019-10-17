@@ -2,8 +2,8 @@
 
 OLD_KEYS="gpg-pubkey-c2d4e821-5bc51032 gpg-pubkey-c2d4e821-5cae3514"
 for key in $OLD_KEYS; do
-    if rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n' | grep $key; then
-        rpm -e $key # Remove expiring key
+    if rpm -q gpg-pubkey --qf '%{NAME}-%{VERSION}-%{RELEASE}\t%{SUMMARY}\n' | grep "$key"; then
+        rpm -e "$key" # Remove expiring key
     fi
 done
 
