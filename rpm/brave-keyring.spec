@@ -1,5 +1,5 @@
 Name:       brave-keyring
-Version:    1.3
+Version:    1.4
 Release:    1%{?dist}
 Summary:    Brave Browser keyring and repository files
 
