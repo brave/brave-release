@@ -1,8 +1,5 @@
 #!/bin/sh
 
-chown root:root /etc/apt/trusted.gpg.d/brave-browser-release.gpg
-chmod 0644 /etc/apt/trusted.gpg.d/brave-browser-release.gpg
-
 # Delete (expired) key added by old install instructions
 apt-key --keyring /etc/apt/trusted.gpg del D8BAD4DE7EE17AF52A834B2D0BB75829C2D4E821
 
