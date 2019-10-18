@@ -1,16 +1,11 @@
 all: rpm-build
 build: source
-		for dist in epel-8-x86_64 \
-				    fedora-29-x86_64 \
-					fedora-30-x86_64 ; do \
-				mock -r $$dist \
-				     --buildsrpm \
-					 --source=brave-keyring-source.tar.gz \
-					 --spec=brave-keyring.spec \
-					 --rebuild \
-					 --old-chroot \
-					 --resultdir=output ; \
-		done
+	mock -r fedora-30-x86_64 \
+		--source=brave-keyring-source.tar.gz \
+        --spec=brave-keyring.spec \
+		--rebuild \
+		--old-chroot \
+		--resultdir=output
 
 keys:
 		wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc -O brave-keyring-1.4/etc/pki/rpm-gpg/RPM-GPG-KEY-brave

@@ -1,6 +1,6 @@
 Name:       brave-keyring
 Version:    1.4
-Release:    1%{?dist}
+Release:    1
 Summary:    Brave Browser keyring and repository files
 
 License:    MPL-2.0
