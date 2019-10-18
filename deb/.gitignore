@@ -1,1 +1,3 @@
 output
+*.asc
+brave-keyring/etc/apt/trusted.gpg.d/brave-browser-release.gpg

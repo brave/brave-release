@@ -1,11 +1,11 @@
 Name:       brave-keyring
-Version:    1.3
-Release:    1%{?dist}
+Version:    1.4
+Release:    1
 Summary:    Brave Browser keyring and repository files
 
 License:    MPL-2.0
 URL:        https://www.brave.com/
-Source0:    https://github.com/brave/brave-release/archive/master.zip
+Source0:    ./brave-keyring-source.tar.gz
 BuildArch:  noarch
 
 %description
@@ -34,13 +34,8 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /etc/cron.daily/brave-key-updater
 
 %post
-
-source /etc/os-release
-if [[ "$NAME" =~ "CentOS" || "$NAME" =~ "Red Hat Enterprise Linux" ]]; then
-    echo "RPM signing with subkeys not supported in el7, please manually verify. For more details see https://github.com/brave/devops/issues/743"
-fi
-    service atd start
-    echo "sh /etc/cron.daily/brave-key-updater" | at now + 2 minute > /dev/null 2>&1
+service atd start
+echo "sh /etc/cron.daily/brave-key-updater" | at now + 2 minute > /dev/null 2>&1
 
 %changelog
 
