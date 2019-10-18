@@ -34,13 +34,8 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /etc/cron.daily/brave-key-updater
 
 %post
-
-source /etc/os-release
-if [[ "$NAME" =~ "CentOS" || "$NAME" =~ "Red Hat Enterprise Linux" ]]; then
-    echo "RPM signing with subkeys not supported in el7, please manually verify. For more details see https://github.com/brave/devops/issues/743"
-fi
-    service atd start
-    echo "sh /etc/cron.daily/brave-key-updater" | at now + 2 minute > /dev/null 2>&1
+service atd start
+echo "sh /etc/cron.daily/brave-key-updater" | at now + 2 minute > /dev/null 2>&1
 
 %changelog
 
