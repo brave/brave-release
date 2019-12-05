@@ -8,7 +8,7 @@ build: source
 		--resultdir=output
 
 keys:
-		wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc -O brave-keyring-1.4/etc/pki/rpm-gpg/RPM-GPG-KEY-brave
+		wget https://brave-browser-apt-release.s3.brave.com/brave-core.asc -O brave-keyring-1.5/etc/pki/rpm-gpg/RPM-GPG-KEY-brave
 
 source: keys
 		tar cvzf brave-keyring-source.tar.gz brave-keyring-*/*
