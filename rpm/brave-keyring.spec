@@ -23,8 +23,10 @@ fetching the packages.
 %install
 mkdir -p %{buildroot}/etc/pki/rpm-gpg
 mkdir -p %{buildroot}/etc/cron.daily
+mkdir -p %{buildroot}/usr/lib/sysctl.d/
 install -m 644 etc/pki/rpm-gpg/RPM-GPG-KEY-brave -t %{buildroot}/etc/pki/rpm-gpg/
 install -m 755 etc/cron.daily/brave-key-updater -t %{buildroot}/etc/cron.daily/
+install -m 644 usr/lib/sysctl.d/50-brave.conf -t %{buildroot}/usr/lib/sysctl.d/
 
 mkdir -p %{buildroot}/etc/yum.repos.d
 
@@ -32,6 +34,7 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 %files
 /etc/pki/rpm-gpg/RPM-GPG-KEY-brave
 /etc/cron.daily/brave-key-updater
+/usr/lib/sysctl.d/50-brave.conf
 
 %post
 service atd start
