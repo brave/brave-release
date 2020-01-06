@@ -2,6 +2,3 @@
 
 # Delete (expired) key added by old install instructions
 apt-key --keyring /etc/apt/trusted.gpg del D8BAD4DE7EE17AF52A834B2D0BB75829C2D4E821
-
-# Enable user namespaces immediately if they're available
-sysctl -p /etc/sysctl.d/30-brave.conf || true
