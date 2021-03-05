@@ -8,6 +8,8 @@ URL:        https://www.brave.com/
 Source0:    ./brave-keyring-source.tar.gz
 BuildArch:  noarch
 
+Requires:   at
+
 %description
 The Brave keyring setup installs the keyring files necessary for validating
 packages. In the future it will install the yum.repos.d repository for for
