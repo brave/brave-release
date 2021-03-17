@@ -3,8 +3,10 @@
 # Delete (expired) key added by old install instructions
 apt-key --keyring /etc/apt/trusted.gpg del D8BAD4DE7EE17AF52A834B2D0BB75829C2D4E821
 
+# Match if the new keyring in /usr/share/keyrings is in use.
+new_keyring_pattern='^[[:space:]]*deb[^#]*signed-by=/usr/share/keyrings/brave-browser-release.asc[^#]*brave-browser-apt-release.s3.brave.com'
+
 # Delete the old keyring file if the new one is already in use.
-if grep -q '^[ ]*deb.*signed-by=/usr/share/keyrings/brave-browser-release.asc.*brave-browser-apt-release.s3.brave.com' \
-    /etc/apt/sources.list /etc/apt/sources.list.d/*; then
+if grep -q "${new_keyring_pattern:?}" /etc/apt/sources.list /etc/apt/sources.list.d/*; then
     rm -f /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 fi
