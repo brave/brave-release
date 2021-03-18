@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ "$1" = configure ] || exit
+
 # Delete (expired) key added by old install instructions
 apt-key --keyring /etc/apt/trusted.gpg del D8BAD4DE7EE17AF52A834B2D0BB75829C2D4E821
 
