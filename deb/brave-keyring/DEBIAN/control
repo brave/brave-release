@@ -4,4 +4,4 @@ Maintainer: Ben Kero <bkero@brave.com>
 Priority: optional
 Version: 1.10
 Description: Brave Browser keyring and repository files
-Depends: gnupg, grep, procps
+Depends: gnupg, procps

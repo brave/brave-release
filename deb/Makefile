@@ -1,7 +1,7 @@
 all: deb-build
 
 clean:
-	rm -rf output brave-keyring/etc/apt/trusted.gpg.d/* brave-keyring/usr
+	rm -rf output brave-keyring/etc/apt/trusted.gpg.d brave-keyring/usr
 	docker rmi deb-builder
 
 docker-build:
