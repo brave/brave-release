@@ -1,11 +1,12 @@
 #!/bin/sh
 
-[ "$1" = configure ] || exit
+# WARNING: preinst and postrm are symlinked to postinst, for the sake of
+# `dpkg-maintscript-helper rm_conffile'.
 
 # Match if the new keyring in /usr/share/keyrings is in use.
 new_keyring_pattern='^[[:space:]]*deb[^#]*signed-by=/usr/share/keyrings/brave-browser-release.asc[^#]*brave-browser-apt-release.s3.brave.com'
 
 # Delete the old keyring file if the new one is already in use.
-if grep -q "${new_keyring_pattern:?}" /etc/apt/sources.list.d/*; then
-    rm -f /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+if grep -q "${new_keyring_pattern:?}" /etc/apt/sources.list.d/brave-browser-release.list; then
+    dpkg-maintscript-helper rm_conffile /etc/apt/trusted.gpg.d/brave-browser-release.gpg -- "$@"
 fi
