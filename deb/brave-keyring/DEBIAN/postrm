@@ -1,6 +1,3 @@
 #!/bin/sh -e
 
-# If the old keyring file is a symlink created in postinst, delete it.
-if [ -L /etc/apt/trusted.gpg.d/brave-browser-release.gpg ]; then
-    rm -f /etc/apt/trusted.gpg.d/brave-browser-release.gpg
-fi
+rm -f /etc/apt/trusted.gpg.d/brave-browser-release.gpg
