@@ -3,12 +3,12 @@
 [ "$1" = configure ] || exit
 
 # Match if the new keyring in /usr/share/keyrings is in use.
-new_keyring_pattern='^[[:space:]]*deb[^#]*signed-by=/usr/share/keyrings/brave-browser-release.asc[^#]*brave-browser-apt-release.s3.brave.com'
+new_keyring_pattern='^[[:space:]]*deb[^#]*signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg[^#]*brave-browser-apt-release.s3.brave.com'
 
 # Delete the old keyring file if the new one is already in use.
 # Otherwise replace the old file with a symlink to its new location.
 if grep -q "${new_keyring_pattern:?}" /etc/apt/sources.list.d/brave-browser-release.list; then
     rm -f /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 else
-    ln -sf /usr/share/keyrings/brave-browser-release.gpg /etc/apt/trusted.gpg.d/brave-browser-release.gpg
+    ln -sf /usr/share/keyrings/brave-browser-archive-keyring.gpg /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 fi
