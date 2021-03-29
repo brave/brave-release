@@ -7,7 +7,8 @@ new_keyring_pattern='^[[:space:]]*deb[^#]*signed-by=/usr/share/keyrings/brave-br
 
 # Delete the old keyring file if the new one is already in use.
 # Otherwise replace the old file with a symlink to its new location.
-if grep -q "${new_keyring_pattern:?}" /etc/apt/sources.list.d/brave-browser-release.list; then
+if [ -f /etc/apt/sources.list.d/brave-browser-release.list ] &&\
+   grep -q "${new_keyring_pattern:?}" /etc/apt/sources.list.d/brave-browser-release.list; then
     rm -f /etc/apt/trusted.gpg.d/brave-browser-release.gpg
 else
     ln -sf /usr/share/keyrings/brave-browser-archive-keyring.gpg /etc/apt/trusted.gpg.d/brave-browser-release.gpg
