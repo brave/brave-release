@@ -1,5 +1,4 @@
 FROM ubuntu:bionic
-MAINTAINER Ben Kero <bkero@brave.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
