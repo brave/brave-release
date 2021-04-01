@@ -1,7 +1,6 @@
 Package: brave-keyring
 Architecture: all
-Maintainer: Ben Kero <bkero@brave.com>
+Maintainer: Brave Software <support@brave.com>
 Priority: optional
-Version: 1.10
+Version: 1.11
 Description: Brave Browser keyring and repository files
-Depends: gnupg, procps
