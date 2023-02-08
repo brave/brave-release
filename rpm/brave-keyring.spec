@@ -9,6 +9,7 @@ Source0:    ./brave-keyring-source.tar.gz
 BuildArch:  noarch
 
 Requires:   at
+Requires:   cronie
 
 %description
 The Brave keyring setup installs the keyring files necessary for validating
@@ -39,8 +40,7 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /usr/lib/sysctl.d/50-brave.conf
 
 %post
-service atd start
-echo "sh /etc/cron.daily/brave-key-updater" | at now + 2 minute > /dev/null 2>&1
+sh -c "/etc/cron.daily/brave-key-updater"
 
 %changelog
 
