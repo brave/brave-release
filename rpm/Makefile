@@ -4,7 +4,7 @@ build: source
 		--source=brave-keyring-source.tar.gz \
 		--spec=brave-keyring.spec \
 		--rebuild \
-		--old-chroot \
+		--isolation=simple \
 		--resultdir=output
 
 bump:
@@ -12,7 +12,7 @@ bump:
 
 keys:
 	./make-keyring.sh
-	set -x; VERSION=`cat VERSION`; cp brave-core.asc brave-keyring-$${VERSION}/etc/pki/rpm-gpg/RPM-GPG-KEY-brave
+	set -x; VERSION=`cat VERSION`; cp RPM-GPG-KEY-brave* brave-keyring-$${VERSION}/etc/pki/rpm-gpg/
 
 source: keys
 		tar cvzf brave-keyring-source.tar.gz brave-keyring-*/*
