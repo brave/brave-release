@@ -30,7 +30,7 @@ install -m 644 etc/pki/rpm-gpg/RPM-GPG-KEY-brave -t %{buildroot}/etc/pki/rpm-gpg
 install -m 644 etc/pki/rpm-gpg/RPM-GPG-KEY-brave-beta -t %{buildroot}/etc/pki/rpm-gpg/
 install -m 644 etc/pki/rpm-gpg/RPM-GPG-KEY-brave-nightly -t %{buildroot}/etc/pki/rpm-gpg/
 install -m 755 etc/cron.daily/brave-key-updater -t %{buildroot}/etc/cron.daily/
-install -m 644 usr/lib/sysctl.d/50-brave.conf -t %{buildroot}/usr/lib/sysctl.d/
+install -m 644 usr/lib/sysctl.d/53-brave.conf -t %{buildroot}/usr/lib/sysctl.d/
 
 mkdir -p %{buildroot}/etc/yum.repos.d
 
@@ -40,7 +40,7 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /etc/pki/rpm-gpg/RPM-GPG-KEY-brave-beta
 /etc/pki/rpm-gpg/RPM-GPG-KEY-brave-nightly
 /etc/cron.daily/brave-key-updater
-/usr/lib/sysctl.d/50-brave.conf
+/usr/lib/sysctl.d/53-brave.conf
 
 %post
 service atd start
