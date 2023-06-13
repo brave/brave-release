@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 shopt -s inherit_errexit
-set -eEo pipefail
+set -euEo pipefail
 
 KEYRING_DIR="$PWD/brave-keyring/usr/share/keyrings"
 
-mkdir -p "${KEYRING_DIR:?}"
+mkdir -p "$KEYRING_DIR"
 
 # Release Key
 wget -q https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg \
