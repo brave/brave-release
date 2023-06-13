@@ -12,8 +12,8 @@ deb-build: docker-build
 
 build:
 	mkdir -p output
-	bash make-keyring.sh
-	bash make-dists.sh
+	./make-keyring.sh
+	./make-dists.sh
 
 bump:
 	./bump-version.sh
