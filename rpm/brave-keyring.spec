@@ -1,5 +1,5 @@
 Name:       brave-keyring
-Version:    1.13
+Version:    1.14
 Release:    1
 Summary:    Brave Browser keyring and repository files
 
@@ -8,7 +8,7 @@ URL:        https://www.brave.com/
 Source0:    ./brave-keyring-source.tar.gz
 BuildArch:  noarch
 
-Requires:   at
+Requires:   systemd
 
 %description
 The Brave keyring setup installs the keyring files necessary for validating
@@ -43,8 +43,7 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /usr/lib/sysctl.d/53-brave.conf
 
 %post
-service atd start
-echo "sh /etc/cron.daily/brave-key-updater" | at now + 2 minute > /dev/null 2>&1
+systemd-run --on-active=2m sh /etc/cron.daily/brave-key-updater
 
 %changelog
 
