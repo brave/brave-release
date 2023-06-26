@@ -43,4 +43,5 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 while ! sh %{_bindir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done &
 
 %changelog
-
+* Mon Jun 26 2023 Oscar Jara <ojara@brave.com> - 1.14-1
+- Refrain from utilizing the 'at' command
