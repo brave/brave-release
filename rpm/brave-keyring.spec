@@ -35,7 +35,7 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /usr/lib/sysctl.d/53-brave.conf
 
 %post
-timeout 10m bash -c "while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done" &
+timeout 10m sh -c "while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done" &
 
 %changelog
 * Thu Jul 4 2023 Brave Software <support@brave.com> - 1.14-1
