@@ -10,15 +10,10 @@ BuildArch:  noarch
 
 %description
 The Brave keyring setup installs the keyring files necessary for validating
-packages. In the future it will install the yum.repos.d repository for for
-fetching the packages.
+packages.
 
 %prep
 %setup -q
-
-
-%build
-
 
 %install
 mkdir -p %{buildroot}/etc/pki/rpm-gpg
@@ -40,8 +35,8 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 /usr/lib/sysctl.d/53-brave.conf
 
 %post
-while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done &
+timeout 10m bash -c "while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done" &
 
 %changelog
-* Mon Jun 28 2023 Oscar Jara <ojara@brave.com> - 1.14-1
+* Thu Jul 4 2023 Brave Software <support@brave.com> - 1.14-1
 - Refrain from utilizing the 'at' command
