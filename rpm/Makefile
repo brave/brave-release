@@ -25,4 +25,4 @@ docker-build:
 	docker build -t rpm-builder .
 
 rpm-build: docker-build
-	docker run --rm -ti -v $(shell pwd):/brave-release --security-opt apparmor:unconfined --cap-add=SYS_ADMIN rpm-builder
+	docker run --rm -v $(shell pwd):/brave-release --security-opt apparmor:unconfined --cap-add=SYS_ADMIN rpm-builder
