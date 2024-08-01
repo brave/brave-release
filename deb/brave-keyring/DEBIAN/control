@@ -2,5 +2,5 @@ Package: brave-keyring
 Architecture: all
 Maintainer: Brave Software <support@brave.com>
 Priority: optional
-Version: 1.16
+Version: 1.17
 Description: Brave Browser keyring and repository files
