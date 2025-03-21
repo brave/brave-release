@@ -1,5 +1,5 @@
 Name:       brave-keyring
-Version:    1.15
+Version:    1.16
 Release:    1
 Summary:    Brave Browser keyring and repository files
 
@@ -38,5 +38,7 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 timeout 10m sh -c "while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done" &
 
 %changelog
+* Fri Mar 21 2025 Brave Software <support@brave.com> - 1.16-1
+- Include new public signing keys for future use
 * Thu Jul 4 2023 Brave Software <support@brave.com> - 1.14-1
 - Refrain from utilizing the 'at' command
