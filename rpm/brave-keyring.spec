@@ -40,5 +40,7 @@ timeout 10m sh -c "while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; 
 %changelog
 * Fri Mar 21 2025 Brave Software <support@brave.com> - 1.16-1
 - Include new public signing keys for future use
+* Thu Aug 1 2024 Brave Software <support@brave.com> - 1.15-1
+- Remove legacy signing keys no longer in use
 * Thu Jul 4 2023 Brave Software <support@brave.com> - 1.14-1
 - Refrain from utilizing the 'at' command
