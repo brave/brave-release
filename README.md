@@ -26,6 +26,11 @@ Resulting packages will be placed in `brave-release/rpm/output`
 $ cd deb
 $ make
 ```
+##### deb (ARM)
+```
+$ cd deb
+$ make deb-build-arm
+```
 
 Resulting packages will be placed in `brave-release/deb/output`
 
