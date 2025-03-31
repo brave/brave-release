@@ -9,4 +9,11 @@ export MINOR=$((MINOR+1))
 export VERSION="${MAJOR}.${MINOR}"
 echo ${VERSION}>VERSION
 git mv brave-keyring-${OLDVER} brave-keyring-${VERSION}
-sed -i "s/${OLDVER}/${VERSION}/" brave-keyring.spec
+
+# Set sed in-place flag based on OS (empty string for macOS, nothing for Linux)
+if [[ "$(uname)" == "Darwin" ]]; then
+  SED_INPLACE_FLAG=(-i '')
+else
+  SED_INPLACE_FLAG=(-i)
+fi
+sed "${SED_INPLACE_FLAG[@]}" -e '/^Version:/ s/'"${OLDVER}"'/'"${VERSION}"'/' brave-keyring.spec
