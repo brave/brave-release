@@ -1,5 +1,5 @@
 Name:       brave-keyring
-Version:    1.17
+Version:    1.18
 Release:    1
 Summary:    Brave Browser keyring and repository files
 
@@ -38,6 +38,8 @@ mkdir -p %{buildroot}/etc/yum.repos.d
 timeout 10m sh -c "while ! sh %{_libexecdir}/brave-key-updater >/dev/null 2>&1; do sleep 2; done" &
 
 %changelog
+* Thu Jul 31 2025 Brave Software <support@brave.com> - 1.18-1
+- Include new public signing keys for future use
 * Thu Mar 27 2025 Brave Software <support@brave.com> - 1.17-1
 - Update GPG key retrieval sources in make-keyring.sh
 * Fri Mar 21 2025 Brave Software <support@brave.com> - 1.16-1
